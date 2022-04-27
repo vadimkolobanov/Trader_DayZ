@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+   <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Class Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Buy Value</th>
+      <th scope="col">Sell Value</th>
+      <th scope="col">Category</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in items %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ item.class_name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.buyvalue}}</td>
+      <td>{{ item.sellvalue}}</td>
+      <td>{{ item.category}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
